@@ -263,10 +263,6 @@ Ensure your code adheres to coding standards and includes tests for new features
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-For questions, support, or feedback, please reach out to [your.email@example.com](mailto:your.email@example.com). You can also open issues on the repository for discussions or bug reports.
-
 ## Acknowledgements
 
 - **Node.js Community**: For the powerful runtime environment.
