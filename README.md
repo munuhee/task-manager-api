@@ -39,7 +39,7 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/munuhee/task-manager-api
-cd your-repository
+cd task-manager-api
 ```
 
 ### Install Dependencies
