@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "mocha --recursive --timeout 5000",
+    "test": "mocha --recursive src/tests/*.test.js",
     "lint": "eslint 'src/**/*.js'",
     "format": "prettier --write 'src/**/*.js'"
   },
@@ -27,15 +27,17 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.2",
     "morgan": "^1.10.0",
+    "uuid": "^10.0.0",
     "winston": "^3.13.1"
   },
   "devDependencies": {
     "chai": "^4.3.6",
     "eslint": "^9.8.0",
+    "globals": "^15.9.0",
     "mocha": "^10.7.0",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.3",
-    "sinon": "^18.0.0",
-    "supertest": "^7.0.0"
+    "sinon": "^7.5.0",
+    "sinon-mongoose": "^2.3.0"
   }
 }
