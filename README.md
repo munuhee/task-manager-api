@@ -56,7 +56,7 @@ Create a `.env` file in the root directory with the following content:
 
 ```plaintext
 NODE_ENV=development
-MONGO_URI=mongodb://localhost:27017/mydatabase
+MONGODB_URI=mongodb://localhost:27017/myDatabase
 JWT_SECRET=your_jwt_secret
 PORT=3000
 ```
@@ -213,23 +213,13 @@ Run unit tests to validate individual components:
 npm test
 ```
 
-### Integration Tests
+### Tests
 
-Run integration tests to check end-to-end functionality:
-
-```bash
-npm run test-integration
-```
-
-### Test Coverage
-
-Generate a test coverage report:
+Run tests:
 
 ```bash
-npm run test:coverage
+npm test
 ```
-
-Coverage reports will be available in the `coverage` directory.
 
 ## Configuration
 
@@ -247,44 +237,3 @@ Coverage reports will be available in the `coverage` directory.
 
 - **Development**: Detailed error messages and stack traces are enabled.
 - **Production**: Generic error messages with detailed logs stored.
-
-## Contributing
-
-We welcome contributions! To contribute:
-
-1. **Fork the Repository**: Create a fork on GitHub.
-2. **Create a Branch**: Create a new branch for your changes.
-3. **Implement Changes**: Make your modifications or fixes.
-4. **Submit a Pull Request**: Open a pull request with a clear description of your changes.
-
-Ensure your code adheres to coding standards and includes tests for new features or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions, support, or feedback, please reach out to [your.email@example.com](mailto:your.email@example.com). You can also open issues on the repository for discussions or bug reports.
-
-## Acknowledgements
-
-- **Node.js Community**: For the powerful runtime environment.
-- **Express Contributors**: For the robust framework.
-- **MongoDB Team**: For the flexible NoSQL database.
-- **Chai & Mocha Developers**: For reliable testing frameworks.
-- **Docker Community**: For the containerization tools that enhance development and deployment.
-
-## Roadmap
-
-### Planned Features
-
-- **Task Categorization**: Introduce task categories or labels for better organization.
-- **User Roles**: Implement role-based access control to manage permissions.
-- **Notifications**: Add support for email or in-app notifications for task deadlines.
-
-### Future Improvements
-
-- **API Rate Limiting**: Implement rate limiting to prevent abuse.
-- **Performance Optimization**: Refactor code to improve performance and scalability.
-- **Extended Documentation**: Provide more detailed API documentation and usage examples.
