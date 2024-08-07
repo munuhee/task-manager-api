@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require("joi");
 
 // User registration validation
 const registerValidation = (data) => {
@@ -15,7 +15,7 @@ const registerValidation = (data) => {
 const loginValidation = (data) => {
   const schema = Joi.object({
     email: Joi.string().email().required(),
-    password: Joi.string().min(6).required()
+    password: Joi.string().min(6).required(),
   });
 
   return schema.validate(data);
@@ -27,7 +27,7 @@ const taskValidation = (data) => {
     title: Joi.string().min(3).required(),
     description: Joi.string().min(5).required(),
     dueDate: Joi.date().required(),
-    priority: Joi.string().valid('low', 'medium', 'high').required()
+    priority: Joi.string().valid("low", "medium", "high").required(),
   });
 
   return schema.validate(data);
@@ -36,5 +36,5 @@ const taskValidation = (data) => {
 module.exports = {
   registerValidation,
   loginValidation,
-  taskValidation
+  taskValidation,
 };

@@ -39,7 +39,7 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/munuhee/task-manager-api
-cd task-manager-api
+cd your-repository
 ```
 
 ### Install Dependencies
@@ -262,6 +262,10 @@ Ensure your code adheres to coding standards and includes tests for new features
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions, support, or feedback, please reach out to [your.email@example.com](mailto:your.email@example.com). You can also open issues on the repository for discussions or bug reports.
 
 ## Acknowledgements
 

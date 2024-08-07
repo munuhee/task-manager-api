@@ -1,12 +1,12 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
-const logger = require('../utils/logger');
+const jwt = require("jsonwebtoken");
+const User = require("../models/userModel");
+const logger = require("../utils/logger");
 
 const authMiddleware = async (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
+  const token = req.header("Authorization")?.replace("Bearer ", "");
 
   if (!token) {
-    return res.status(401).json({ message: 'Access denied' });
+    return res.status(401).json({ message: "Access denied" });
   }
 
   try {
@@ -14,14 +14,16 @@ const authMiddleware = async (req, res, next) => {
     const user = await User.findById(decoded.userId);
 
     if (!user) {
-      return res.status(401).json({ message: 'Invalid token' });
+      return res.status(401).json({ message: "Invalid token" });
     }
 
-    req.user = { id: user._id, tenantId: user.tenantId }; // Attach user info to request
+    // Ensure tenantId is attached correctly
+    req.user = { id: user._id, tenantId: decoded.tenantId };
+    console.log("Authenticated User:", req.user);
     next();
   } catch (error) {
-    logger.error('Authentication error', { error: error.message });
-    res.status(401).json({ message: 'Invalid token' });
+    logger.error("Authentication error", { error: error.message });
+    res.status(401).json({ message: "Invalid token" });
   }
 };
 
