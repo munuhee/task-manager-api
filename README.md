@@ -235,5 +235,27 @@ npm test
 
 ### Error Handling
 
-- **Development**: Detailed error messages and stack traces are enabled.
+## Bootstrap & Healthchecks (added)
+
+I added utility scripts to help bootstrap and validate the API locally:
+
+- `scripts\bootstrap.ps1` — PowerShell script to check prerequisites and run `npm install`. Use `-UseDocker` to build and start containers with `docker-compose`.
+- `src\utils\check_endpoints.js` — Node script that hits `/`, registers a test user, logs in, creates a task and fetches tasks. Run it via `npm run healthcheck` after the server is up.
+
+Examples:
+
+```powershell
+# Bootstrap local environment and install deps
+./scripts/bootstrap.ps1
+
+# Bootstrap with Docker (build + start)
+./scripts/bootstrap.ps1 -UseDocker
+```
+
+```bash
+# After server is running
+npm run healthcheck
+```
+
+If you run into errors, paste the terminal output here and I will help you debug step-by-step.
 - **Production**: Generic error messages with detailed logs stored.
