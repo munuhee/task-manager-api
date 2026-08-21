@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "mocha --recursive src/tests/*.test.js",
+    "healthcheck": "node src/utils/check_endpoints.js",
+    "test": "mocha --recursive src/tests",
     "lint": "eslint 'src/**/*.js'",
     "format": "prettier --write 'src/**/*.js'"
   },

@@ -40,10 +40,10 @@ const updateTask = async (req, res) => {
   if (error) return res.status(400).json({ message: error.details[0].message });
 
   try {
-    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+    const task = await Task.findByIdAndUpdate(req.params.taskId, req.body, {
       new: true,
     });
-    if (!task) return res.status(404).json({ message: "Task not found" });
+    if (!task) return res.status(404).json({ message: "Task not found"});
 
     res.status(200).json(task);
   } catch (err) {
@@ -54,7 +54,7 @@ const updateTask = async (req, res) => {
 
 const deleteTask = async (req, res) => {
   try {
-    const task = await Task.findByIdAndDelete(req.params.id);
+    const task = await Task.findByIdAndDelete(req.params.taskId);
     if (!task) return res.status(404).json({ message: "Task not found" });
 
     res.status(200).json({ message: "Task deleted successfully" });
